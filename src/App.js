@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyle from './globalStyles';
+import Styled from 'styled-components';
+
+import KeyboardTyper from './components/KeyboardTyper';
+import SideMenu from './components/Menu/SideMenu';
+
+const MainContainer = Styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background-color: var(--bg-color);
+  justify-content: center;
+  align-items: center;
+
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <MainContainer>
+        <KeyboardTyper
+          text={
+            'etitient trient etine irite nient little rein inite eline elie etine little trient eit etire ininter etin eline nientle'
+          }
+        />
+        <SideMenu />
+      </MainContainer>
+    </>
   );
 }
 
